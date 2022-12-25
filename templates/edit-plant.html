@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style.css">
+    <title>MyPlantApp</title>
+</head>
+
+<body>
+<div id="box">
+  {% include 'header.html' %}
+
+    <!-- edit plant form -->
+    <section id="create-page" class="auth">
+        <form method="post" action="{% url 'edit plant' pk=plant.pk %}" id="create">
+            <div class="container">
+                <h1>Edit Plant</h1>
+
+            {{ form }}
+                {% csrf_token %}
+
+                <input class="btn submit" type="submit" value="Edit Plant">
+            </div>
+        </form>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        &copy;SoftUni Team 2022. All rights reserved.
+    </footer>
+
+</div>
+</body>
+</html>
